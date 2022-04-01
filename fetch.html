@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <article>
+
+    </article>
+    <input type="button" value="fetch" onclick="
+    /*
+        fetch('css').then(function(response){
+            response.text().then(function(text){
+                document.querySelector('article').innerHTML=text;
+            })
+        })
+    */
+        //Asynchronous 비동기
+        //fetch then에 콜백함수를 주면 fetch api가 실행시킬때
+        //매개변수로 response객체를 인자로 준다고 정해져있음
+        fetch('html').then(function(response){//매개변수 이름은 중요하지않음
+            console.log(response.status);
+            if(response.status===404){
+                alert('not found');
+            }
+            
+        });//html을 호출하는동안 1,2가 실행되고 html끝나면 callbackme가 호출
+        console.log(1);
+        console.log(2);
+    ">
+</body>
+</html>
